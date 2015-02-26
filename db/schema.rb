@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150226205050) do
   enable_extension "plpgsql"
 
 
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -45,13 +46,13 @@ ActiveRecord::Schema.define(version: 20150226205050) do
     t.text     "content"
     t.integer  "vote_count"
     t.integer  "user_id"
-=======
+
   create_table "answers", force: true do |t|
     t.integer  "question_id"
     t.integer  "user_id"
     t.string   "content"
     t.integer  "vote_count"
->>>>>>> update controller and routes
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end
