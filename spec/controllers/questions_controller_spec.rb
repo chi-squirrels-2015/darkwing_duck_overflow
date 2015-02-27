@@ -1,7 +1,15 @@
 require 'rails_helper'
 
 describe QuestionsController do
-  let(:question) {Question.create!}
+
+  include Devise::TestHelpers
+
+  def setup
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in FactoryGirl.create(:user)
+  end
+
+  let(:question) {Question.create!(title: "Does it work?", content: "Why doesn't this thing work", vote_count: 2, user: user)}
 
   describe "get #index" do
     it "assigns all questions as @questions" do

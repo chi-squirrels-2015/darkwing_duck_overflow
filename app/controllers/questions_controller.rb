@@ -8,17 +8,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    before_action :user_signed_in?
-
-
-    @question = Question.create(question_params)
-    @question.user = current_user
-    if @question.save
-      redirect_to questions_path(@question)
-    else
-      render new
+    if current_user
+      @question = Question.create(question_params)
+      @question.user = current_user
+      if @question.save
+        redirect_to questions_path(@question)
+      else
+        render new
+      end
     end
-
   end
 
   def question_params
