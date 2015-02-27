@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150226214500) do
     t.integer  "question_id"
     t.integer  "user_id"
     t.text     "content"
+    t.string   "content"
     t.integer  "vote_count"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -30,6 +31,10 @@ ActiveRecord::Schema.define(version: 20150226214500) do
     t.string   "title"
     t.text     "content"
     t.integer  "vote_count"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "vote_count"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
