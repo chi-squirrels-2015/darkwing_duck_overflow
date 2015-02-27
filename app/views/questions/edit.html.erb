@@ -1,0 +1,14 @@
+<div id="question_edit">
+<%= simple_form_for @question, ur;: {action: "update"}, html: {class: "edit_question_form"} do |f| %>
+  <%= f.error_messages %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
+
+<p><%= button_to "Delete Article", @question, :method => :delete %></p>
+
+</div>
+
+

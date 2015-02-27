@@ -1,0 +1,7 @@
+<h1>@question.title</h1>
+  <%= @question.vote_count %>
+  <%= @question.content %>
+    <%= @question.answers.each do |answer| %>
+    <%= answer.vote_count %>
+    <%= answer.content %>
+  <% end %>

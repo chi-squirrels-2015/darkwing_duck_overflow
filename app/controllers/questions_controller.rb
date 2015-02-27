@@ -1,11 +1,17 @@
 class QuestionsController < ApplicationController
 
+
+
+
   def index
     @questions = Question.all
   end
 
   def create
-    @question = Question.all(question_params)
+    before_action :user_signed_in?
+
+
+    @question = Question.create(question_params)
     @question.user = current_user
     if @question.save
       redirect_to questions_path(@question)
