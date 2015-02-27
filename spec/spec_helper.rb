@@ -12,14 +12,15 @@
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
+
+require 'devise'
+
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
   require 'factory_girl_rails'
 
-  RSpec.configure do |config|
-    config.include FactoryGirl::Syntax::Methods
-  end
+RSpec.configure do |config|
 
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
@@ -70,4 +71,11 @@
   #   # a real object. This is generally recommended.
   #   mocks.verify_partial_doubles = true
 
+
+  # Prevents you from mocking or stubbing a method that does not exist on
+  # a real object. This is generally recommended.
+  # mocks.verify_partial_doubles = true
+  config.include Devise::TestHelpers, :type => :controller
+  config.include FactoryGirl::Syntax::Methods
+end
 
