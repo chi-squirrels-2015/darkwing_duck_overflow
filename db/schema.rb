@@ -19,17 +19,17 @@ ActiveRecord::Schema.define(version: 20150226214500) do
   create_table "answers", force: true do |t|
     t.integer  "question_id"
     t.integer  "user_id"
-    t.string   "content"
+    t.text     "content"
     t.integer  "vote_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "questions", force: true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.text     "content"
     t.integer  "vote_count"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
