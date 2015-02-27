@@ -150,6 +150,5 @@ describe QuestionsController do
       expect(response).to be_redirect
     end
   end
-
 end
 
