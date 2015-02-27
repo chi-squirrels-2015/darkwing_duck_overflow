@@ -1,19 +1,12 @@
 class AnswersController < ApplicationController
 
-  def index
-    @answers = Answer.all
-    @question = Question.find(params[:question_id])
-  end
-
-  def show
-    @question = Question.find(params[:question_id])
-    @answer = Answer.find(params[:id])
+  def answer_params
+    params.require(:answer).permit(:content, :vote_count, :user, :question)
   end
 
   def new
     # if current_user
     @answer = Answer.new
-    @question = Question.find(params[:question_id])
     # end
   end
 
@@ -52,10 +45,6 @@ class AnswersController < ApplicationController
     # end
   end
 
-  private
-  def answer_params
-    params.require(:answer).permit(:content)
-  end
 end
 
 
