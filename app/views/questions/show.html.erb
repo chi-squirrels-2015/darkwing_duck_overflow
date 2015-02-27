@@ -1,7 +1,14 @@
-<h1>@question.title</h1>
+<div class="q_and_answer">
+<h1><%=@question.title%></h1>
   <%= @question.vote_count %>
   <%= @question.content %>
-    <%= @question.answers.each do |answer| %>
+  <%= @question.answers.each do |answer| %>
     <%= answer.vote_count %>
     <%= answer.content %>
   <% end %>
+<div/>
+<button id="answer_button">Add an Answer</button>
+<div class="answer_form">
+<%= render '/answers/answer_form' %>
+</div>
+
