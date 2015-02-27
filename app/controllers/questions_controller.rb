@@ -8,19 +8,17 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if current_user
-      @question = Question.create(question_params)
-      @question.user = current_user
-      if @question.save
-        redirect_to questions_path(@question)
-      else
-        render new
-      end
+    @question = Question.new(question_params)
+    # @question.user = current_user
+    if @question.save
+      redirect_to questions_path(@question)
+    else
+      render new
     end
   end
 
   def question_params
-    params.require(:question).permit(:title, :content, :vote_count, :user)
+    params.require(:question).permit(:title, :content, :vote_count, :user_id)
   end
 
   def new
