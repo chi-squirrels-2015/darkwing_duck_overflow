@@ -5,7 +5,6 @@ class CreateQuestions < ActiveRecord::Migration
 
       t.string :title
       t.text :content
-      t.integer :vote_count
 
       t.timestamps
     end
