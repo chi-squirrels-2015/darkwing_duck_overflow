@@ -1,0 +1,18 @@
+
+<div class"row">
+  <div class="col-md-8">
+    <a class="btn" href="questions_path" role="button">Questions</a>
+    <a class="btn" href="users_path" role="button">Users</a>
+    <a class="btn" href="new_question_path" role="button">Ask a Question</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-offset-1 col-md-7">
+    <h1>Most recent questions</h1>
+    <% @questions.each do |question| %>
+        <%= link_to question.title, question_path(question) %><br />
+        <br>
+    <% end %>
+  </div>
+</div>
