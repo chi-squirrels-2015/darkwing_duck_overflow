@@ -9,6 +9,8 @@
 
 #### NEEDS USER AND QUESTION ARGUMENTS)
 
+
+
 20.times do
   User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 end
