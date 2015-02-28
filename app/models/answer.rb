@@ -2,11 +2,7 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   belongs_to :user
 
-  def up_vote
-     @answer.increment! :vote_count
-  end
+  has_many :votes, as: :votable
+  has_many :voters,  through: :votes, source: :voter
 
-  def down_vote
-    @answer.decrement! :vote_count
-  end
 end
