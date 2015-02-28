@@ -1,10 +1,10 @@
 
 <div class="q_and_answer">
 <h1><%=@question.title%></h1>
-  <%= @question.vote_count %>
+  <%= @question.votes.count %>
   <%= @question.content %>
   <%= @question.answers.each do |answer| %>
-    <%= answer.vote_count %>
+    <%= answer.votes.count %>
     <%= answer.content %>
   <% end %>
 <div/>
@@ -12,13 +12,4 @@
   <div class="answer_form">
    <%= render :partial => '/answers/answer_form' %>
   </div>
-
-<h1><%= @question.title %></h1>
-    <%= @question.vote_count %>
-    <%= @question.content %>
-    <%= @question.answers.each do |answer| %>
-    <%= answer.vote_count %>
-    <%= answer.content %>
-
-<% end %>
 
