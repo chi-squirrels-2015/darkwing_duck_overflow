@@ -28,9 +28,9 @@ end
 answers = Answer.all
 
 10.times do
-  Vote.create(voteable: questions.sample, voter: users.sample)
+  Vote.create!(voteable: questions.sample, voter: users.sample)
 end
 
 10.times do
-  Vote.create(voteable: answers.sample, voter: users.sample)
+  Vote.create!(voteable: answers.sample, voter: users.sample)
 end

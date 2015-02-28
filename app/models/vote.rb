@@ -1,12 +1,11 @@
 class Vote < ActiveRecord::Base
-  validates :voter, presence: true, uniqueness: { scope: [:votable_id, :votable_type] }
-  validates :votable, presence: true
-  validates :votable_type, inclusion: { in: ["Question", "Answer"] }
-  validates_inclusion_of :count, :in => (-1..1)
+  validates :voter, presence: true, uniqueness: { scope: [:voteable_id, :voteable_type] }
+  validates :voteable, presence: true
+  validates :voteable_type, inclusion: { in: ["Question", "Answer"] }
 
 
   belongs_to :voter, class_name: "User"
-  belongs_to :votable, polymorphic: true
+  belongs_to :voteable, polymorphic: true
 
   def up_vote
      self.increment!

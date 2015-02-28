@@ -53,9 +53,8 @@ ActiveRecord::Schema.define(version: 20150228211531) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   create_table "votes", force: true do |t|
-    t.integer  "count"
-    t.integer  "votable_id"
-    t.string   "votable_type"
+    t.integer  "voteable_id"
+    t.string   "voteable_type"
     t.integer  "voter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
