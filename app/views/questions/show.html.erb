@@ -9,9 +9,9 @@
   <% end %>
 <div/>
 <button id="answer_button">Add an Answer</button>
-<div class="answer_form">
-<%= render '/answers/answer_form' %>
-</div>
+  <div class="answer_form">
+   <%= render :partial => '/answers/answer_form' %>
+  </div>
 
 <h1><%= @question.title %></h1>
     <%= @question.vote_count %>
