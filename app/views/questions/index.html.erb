@@ -1,10 +1,22 @@
 <div class="container">
-  <h1>Most recent questions</h1>
-  <% @questions.each do |question| %>
-      <%= link_to question.title, question_path(question) %><br />
-      <br>
+  <div class="index_body">
+    <div class="row">
+      <center>
+        <h1 class="question_header">Most recent questions</h1>
+    </div>
+      <%= @questions.order(created_at: :desc).each do |question| %>
+        <div class="list-group-item">
+          <div class="row">
+            <div class="col-md-3">
+              <span class="label label-info"><%= question.created_at.strftime("%b %d, %Y") %></span>
+            </div>
+            <div class="col-md-7">
+              <%= link_to question.title, question_path(question) %></a>
+            </div>
+            <div class="col-md-2"><span class="badge"><%= question.answers.count %></span></div>
+          </div>
+
+  </div>
   <% end %>
-
-
 </div>
 
