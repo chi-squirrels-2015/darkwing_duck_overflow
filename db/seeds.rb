@@ -16,13 +16,21 @@ end
 users = User.all
 
 20.times do
-Question.create!(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, vote_count: 10, user: users.sample)
+Question.create!(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user: users.sample)
 end
 
 questions = Question.all
 
 20.times do
-Answer.create!(content: Faker::Lorem.paragraph, vote_count: 20, user: users.sample, question: questions.sample)
+Answer.create!(content: Faker::Lorem.paragraph, user: users.sample, question: questions.sample)
 end
 
+answers = Answer.all
 
+10.times do
+  Vote.create!(voteable: questions.sample, voter: users.sample)
+end
+
+10.times do
+  Vote.create!(voteable: answers.sample, voter: users.sample)
+end
