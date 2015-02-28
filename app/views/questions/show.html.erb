@@ -1,3 +1,4 @@
+
 <div class="q_and_answer">
 <h1><%=@question.title%></h1>
   <%= @question.vote_count %>
@@ -11,4 +12,13 @@
 <div class="answer_form">
 <%= render '/answers/answer_form' %>
 </div>
+
+<h1><%= @question.title %></h1>
+    <%= @question.vote_count %>
+    <%= @question.content %>
+    <%= @question.answers.each do |answer| %>
+    <%= answer.vote_count %>
+    <%= answer.content %>
+
+<% end %>
 

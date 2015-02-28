@@ -1,0 +1,13 @@
+nav ul {
+  display: inline-block;
+  float: right;
+
+}
+nav a {
+  color:white;
+  padding: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
+  font-family: "Helvetica"
+}
+
