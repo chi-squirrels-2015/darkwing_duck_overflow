@@ -21,7 +21,7 @@ nav a {
 
 nav a:hover {
   text-decoration: none;
-  color: purple;
+  color: #91559B;
 }
 
 nav ul li {
@@ -33,10 +33,13 @@ nav ul li a {
 }
 
 .navbar-custom {
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 18px;
 }
 
+.navbar-default {
+  background-color: #3A414A;
+}
 .brand {
   font-size: 150%;
 }
@@ -45,8 +48,40 @@ nav ul li a {
   padding-bottom:20px;
 }
 
-.index_body {
+body {
   padding-top: 100px;
   font-size: 18px;
 }
 
+.badge {
+  float: right !important;
+  border-radius: 0 !important;
+  background-color: #9B7EAA !important;
+  font-size: 110% !important;
+  font-weight: 300 !important;
+  margin-right: 10px;
+  width: 32%;
+  padding-top:10px !important;
+}
+
+.label {
+  background-color: #FF804C !important;
+  border-radius: 0 !important;
+  font-size: 110% !important;font-weight: 300 !important;
+  margin-top: 20px !important;
+}
+
+.question_links {
+  margin-top: 20px;
+  font-size: 120% !important;
+}
+.question_links a {
+  color: #9398A5 !important;
+}
+.question_table {
+  margin-top: 20px;
+}
+.question_links a:hover{
+  color: #98169B !important;
+  text-decoration: none;
+}
