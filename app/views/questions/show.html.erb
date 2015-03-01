@@ -5,6 +5,24 @@
       <h1><%=@question.title%></h1>
         <hr width=121%>
         <p class="question_content"><%=@question.content%></p>
+        <div class="col-md-2">
+          <div class="votes">
+            <% if current_user %>
+            <%= link_to questions_upvote_path(@question), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
+              <% end %>
+            <%= link_to questions_downvote_path(@question), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
+                <% end %>
+              <%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
+                <% end %>
+            <% end %>
+          </div>
+          <span class="question_vote badge">
+            <p><%= @question.votes.count %></p><p>votes</p>
+          </span>
+        </div>
         <br>
       </div>
     </div>
@@ -16,8 +34,17 @@
         </div>
         <div class="col-md-2">
           <div class="votes">
-            <p class="upvote"><a href="#" class="fa fa-sort-asc fa-3x"></a></p>
-            <p class="downvote"><a href="#" class="fa fa-sort-desc fa-3x"></a></p>
+            <% if current_user %>
+            <%= link_to answers_upvote_path(answer), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
+              <% end %>
+            <%= link_to answers_downvote_path(answer), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
+                <% end %>
+              <%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
+                <% end %>
+            <% end %>
           </div>
           <span class="answer_vote badge">
             <p><%= answer.votes.count %></p><p>votes</p>
