@@ -7,7 +7,9 @@
     <%= answer.content %>
   <% end %>
 <div/>
+<% if current_user %>
 <button id="answer_button">Add an Answer</button>
   <div class="answer_form">
    <%= render :partial => '/answers/answer_form' %>
   </div>
+<% end %>
