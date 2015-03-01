@@ -5,12 +5,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
-    # @question.user = current_user
-    if @question.save
-      redirect_to questions_path(@question)
+    if current_user
+      @question = Question.new(question_params)
+      if @question.save
+        redirect_to questions_path(@question)
+      else
+        render new
+      end
     else
-      render new
+      redirect_to questions_path
     end
   end
 
@@ -19,12 +22,17 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
-
+    if current_user
+      @question = Question.new
+    end
   end
 
   def edit
-    @question = Question.find(params[:id])
+    if current_user
+      @question = Question.find(params[:id])
+    else
+      redirect_to questions_path
+    end
   end
 
   def show
@@ -34,13 +42,20 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    @question.update(question_params)
-    redirect_to questions_path(@question)
+    if @question.user_id == current_user.id
+      @question.update(question_params)
+    else
+      redirect_to questions_path(@question)
+    end
   end
 
   def destroy
     @question = Question.find(params[:id])
-    @question.destroy
-    redirect_to questions_path
+    if @question.user_id == current_user.id  
+      @question.destroy
+      redirect_to questions_path
+    else
+      redirect_to questions_path(@question)
+    end
   end
 end

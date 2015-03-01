@@ -9,10 +9,12 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    # if current_user
+    if current_user
     @answer = Answer.find(params[:id])
     @question = Question.find(params[:question_id])
-    # end
+    else
+      redirect_to new_user_session
+    end
   end
 
   def create
