@@ -3,20 +3,24 @@
     <div class="row">
       <center>
         <h1 class="question_header">Most recent questions</h1>
+      </center>
     </div>
-      <%= @questions.order(created_at: :desc).each do |question| %>
-        <div class="list-group-item">
-          <div class="row">
-            <div class="col-md-3">
-              <span class="label label-info"><%= question.created_at.strftime("%b %d, %Y") %></span>
-            </div>
-            <div class="col-md-7">
-              <%= link_to question.title, question_path(question) %></a>
-            </div>
-            <div class="col-md-2"><span class="badge"><%= question.answers.count %></span></div>
+    <%= @questions.order(created_at: :desc).each do |question| %>
+      <div class="list-group-item">
+        <div class="row">
+          <div class="question_table col-md-3">
+            <span class="label label-info"><%= 'asked ' + time_ago_in_words(question.created_at).gsub('about','') + ' ago' %></span>
           </div>
-
+          <div class="question_links col-md-6">
+            <%= link_to question.title, question_path(question) %></a>
+          </div>
+          <div class="col-md-3">
+            <span class="badge"><p><%= question.answers.count %></p><p>answers</p></span>
+            <span class="badge"><p><%= question.votes.count %></p><p>votes</p></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 
