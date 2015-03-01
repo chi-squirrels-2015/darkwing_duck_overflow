@@ -77,3 +77,42 @@
         </div>
       </div>
 
+          <span class="badge">
+            <p>Best</p>
+            <p>Answer</p>
+          </span>
+          <span class="badge">
+            <p><%= answer.votes.count %></p><p>votes</p>
+          </span>
+
+          <span class="best_answer badge">
+            <p>Best Answer</p>
+          </span>
+
+          <%= link_to "⇣", "#", class: "btn-xs btn-default" %>
+
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="answer_form">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/answers/answer_form' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="answer_form">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/answers/answer_form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

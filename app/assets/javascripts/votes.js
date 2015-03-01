@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("a.fa").on("click", function(event){
+  $("a.fa").on("submit", function(event){
     event.preventDefault();
 
   //   var id = $(this).parent().attr('id');
