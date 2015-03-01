@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if @question.user_id == current_user.id
+    if @question.user == current_user
       @question.update(question_params)
     else
       redirect_to questions_path(@question)
@@ -51,7 +51,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    if @question.user_id == current_user.id  
+    if @question.user == current_user
       @question.destroy
       redirect_to questions_path
     else
