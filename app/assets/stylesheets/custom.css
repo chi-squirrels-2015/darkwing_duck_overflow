@@ -18,7 +18,15 @@ div {
   font-family: 'Quicksand', sans-serif !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
 /*Navbar CSS*/
+
 nav {
   padding-top: 10px;
 }
@@ -28,7 +36,6 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: none;
   color: #91559B !important;
 }
 
@@ -70,9 +77,14 @@ nav ul li a:hover {
   margin-left: 10px !important;
 }
 
+.the_question_title {
+  width: 90% !important;
+}
+
 .the_question {
   margin-left: 15px !important;
   font-size: 18px;
+  width: 90% !important;
 }
 
 .question_header {
@@ -99,7 +111,7 @@ nav ul li a:hover {
 
 .question_links a:hover{
   color: #98169B !important;
-  text-decoration: none;
+
 }
 
 .badge {
@@ -177,7 +189,7 @@ nav ul li a:hover {
 }
 
 .votes a {
-  color: #3A414A;
+  color: #B2B4AE;
 }
 
 .upvote {
@@ -185,18 +197,17 @@ nav ul li a:hover {
 }
 
 .upvote a:hover {
-  color: #009F1F;
+  color: #4DDA68;
 }
 
 .downvote {
 }
 
 .downvote a:hover {
-  color: #E90017;
+  color: #FF5E51;
 }
 
 .votes a:hover {
-  text-decoration: none;
 }
 
 .answer_vote {
