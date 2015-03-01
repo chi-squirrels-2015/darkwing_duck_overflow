@@ -5,7 +5,7 @@
         <h1 class="question_header">Most recent questions</h1>
       </center>
     </div>
-    <%= @questions.order(created_at: :desc).each do |question| %>
+    <% @questions.order(created_at: :desc).each do |question| %>
       <div class="list-group-item">
         <div class="row">
           <div class="question_table col-md-3">

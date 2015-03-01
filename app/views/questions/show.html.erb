@@ -1,15 +1,31 @@
-<div class="q_and_answer">
-<h1><%=@question.title%></h1>
-  <%= @question.votes.count %>
-  <%= @question.content %>
-  <%= @question.answers.each do |answer| %>
-    <%= answer.votes.count %>
-    <%= answer.content %>
-  <% end %>
-<div/>
-<% if current_user %>
-<button id="answer_button">Add an Answer</button>
-  <div class="answer_form">
-   <%= render :partial => '/answers/answer_form' %>
+<div class="container">
+  <div class="q_and_answer">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%=@question.title%></h1>
+          <p><%=@question.content%></p>
+      </div>
+    </div>
+    <% @question.answers.each do |answer| %>
+    <div class="list-group-item">
+      <div class="row">
+        <div class="answer_table col-md-10">
+          <p><strong>Answer: </strong><%= answer.content %></p>
+        </div>
+        <div class="col-md-2">
+          <span class="badge">
+            <p><%= answer.votes.count %></p><p>votes</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    <% if current_user %>
+    <button id="answer_button">Add an Answer</button>
+    <div class="answer_form">
+      <%= render :partial => '/answers/answer_form' %>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
