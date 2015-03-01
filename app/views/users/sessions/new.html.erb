@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-2 form_position">
+  <div class="col-md-6 form_position">
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,13 +18,13 @@
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
-      <% end -%>
+      <% end %>
 
       <div class="actions">
         <%= f.submit "Log in" %>
       </div>
-    <% end %>
+    <% end %><br />
 
-    <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %><br />
   </div>
 </div>

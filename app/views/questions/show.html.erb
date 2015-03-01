@@ -1,9 +1,11 @@
 <div class="container">
   <div class="q_and_answer">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-10">
         <h1><%=@question.title%></h1>
-          <p><%=@question.content%></p>
+        <hr>
+        <p class="question_content"><%=@question.content%></p>
+        <br>
       </div>
     </div>
     <% @question.answers.each do |answer| %>
@@ -21,11 +23,13 @@
     </div>
     <% end %>
 
-    <% if current_user %>
-    <button id="answer_button">Add an Answer</button>
     <div class="answer_form">
-      <%= render :partial => '/answers/answer_form' %>
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/answers/answer_form' %>
+        </div>
+      </div>
     </div>
-    <% end %>
   </div>
 </div>
+
