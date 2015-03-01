@@ -20,7 +20,7 @@ div {
 
 /*Navbar CSS*/
 nav {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 nav a {
@@ -53,9 +53,24 @@ nav ul li a {
   font-size: 150%;
 }
 
+.darkwing_logo {
+  width:15%;
+  padding: 0px 5px 10px 0px !important;
+  margin-left: 30px !important;
+}
+
+.login_shit {
+  margin-top: 45px !important;
+  padding: 0px 30px 0px 0px !important;
+}
+
 /*Question CSS*/
 .question_header {
   padding-bottom:20px;
+}
+
+.q_and_answer h1 {
+  margin-left: 10px !important;
 }
 
 .question_links {
