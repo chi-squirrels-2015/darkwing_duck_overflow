@@ -1,0 +1,6 @@
+<%= simple_form_for @question do |f| %>
+<%= f.input :title, label_html: { class: 'question_form_title_position' }, placeholder: "What's your programming language? Be vague."%>
+<%= f.input :content, label_html: { class: 'sr-only' }, input_html: { class: 'question_form_body_position' } %>
+<%= f.button :submit, 'Post Question', class: 'btn-info create_question_button' %>
+
+<% end %>

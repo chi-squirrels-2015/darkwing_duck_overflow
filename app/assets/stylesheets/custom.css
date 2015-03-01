@@ -32,137 +32,164 @@ nav a:hover {
   color: #91559B !important;
 }
 
-/*nav ul li {
-  display: inline-block;
-  }*/
+nav ul li a {
+  color:white !important;
+  padding-right:20px;
+}
 
-  nav ul li a {
-    color:white !important;
-    padding-right:20px;
-  }
+nav ul li a:hover {
+  color: #91559B ;
+}
 
-  nav ul li a:hover {
-    color: #91559B ;
-  }
+.navbar-custom {
+  font-weight: 400;
+  font-size: 18px;
+}
 
-  .navbar-custom {
-    font-weight: 400;
-    font-size: 18px;
-  }
+.navbar-default {
+  background-color: #3A414A;
+}
 
-  .navbar-default {
-    background-color: #3A414A;
-  }
+.brand {
+  font-size: 150%;
+}
 
-  .brand {
-    font-size: 150%;
-  }
+.darkwing_logo {
+  width:15%;
+  padding: 0px 5px 10px 0px !important;
+  margin-left: 30px !important;
+}
 
-  .darkwing_logo {
-    width:15%;
-    padding: 0px 5px 10px 0px !important;
-    margin-left: 30px !important;
-  }
+.login_shit {
+  margin-top: 45px !important;
+  padding: 0px 30px 0px 0px !important;
+}
 
-  .login_shit {
-    margin-top: 45px !important;
-    padding: 0px 30px 0px 0px !important;
-  }
+/*Question CSS*/
+.question_show_stylz h1 {
+  margin-left: 10px !important;
+}
 
-  /*Question CSS*/
-  .question_header {
-    padding-bottom:20px;
-  }
+.question_header {
+  padding-bottom:20px;
+}
 
-  .q_and_answer h1 {
-    margin-left: 10px !important;
-  }
+.question_body_display {
+  margin-left: 10px;
+  font-size: 120%;
+}
 
-  .question_links {
-    margin-top: 20px;
-    font-size: 120% !important;
-  }
+.question_links {
+  margin-top: 20px;
+  font-size: 120% !important;
+}
 
-  .question_links a {
-    color: #9398A5 !important;
-  }
+.question_table {
+  margin-top: 20px;
+}
 
-  .question_table {
-    margin-top: 20px;
-  }
+.question_links a {
+  color: #9398A5 !important;
+}
 
-  .question_links a:hover{
-    color: #98169B !important;
-    text-decoration: none;
-  }
+.question_links a:hover{
+  color: #98169B !important;
+  text-decoration: none;
+}
 
-  .badge {
-    float: right !important;
-    border-radius: 0 !important;
-    background-color: #9B7EAA !important;
-    font-size: 110% !important;
-    font-weight: 300 !important;
-    margin-right: 10px;
-    width: 32%;
-    padding-top:10px !important;
-  }
+.badge {
+  float: right !important;
+  border-radius: 0 !important;
+  background-color: #9B7EAA !important;
+  font-size: 110% !important;
+  font-weight: 300 !important;
+  margin-right: 10px;
+  width: 32%;
+  padding-top:10px !important;
+}
 
-  .label {
-    background-color: #FF804C !important;
-    border-radius: 0 !important;
-    font-size: 110% !important;font-weight: 300 !important;
-    margin-top: 20px !important;
-  }
+.label {
+  background-color: #FF804C !important;
+  border-radius: 0 !important;
+  font-size: 110% !important;font-weight: 300 !important;
+  margin-top: 20px !important;
+}
 
-  .question_content {
-    margin-left: 10px;
-    font-size: 120%;
-  }
-  /*Answer CSS*/
+/*New question form*/
+.question_form_position {
+  margin: 20px 0px 20px 20px;
+}
 
-  .answer_form {
-    margin: 50px 0px 50px 10px;
-  }
+.question_form_title_position {
+  margin-right: 5px;
+}
 
-  .votes {
-    margin-left: 50px;
-    margin-bottom:-60px;
+.form-inline .form-group input {
+  width:700px;
+}
 
-  }
+.question_form_body_position {
+  margin-top: 10px;
+  margin-left: 35px;
+  width: 700px !important;
+  height: 300px !important;
+}
 
-  .votes a {
-    color: #3A414A;
-  }
+.create_question_button {
+  margin-left: 35px;
+  margin-top:10px;
+  display: block !important;
+  width: 150px !important;
+}
+.ask_question_button {
+  margin-bottom: 15px !important;
+  float: right;
+}
+/*Answer CSS*/
 
-  .upvote {
-    margin-bottom: -30px;
-  }
+.answer_form {
+  margin: 50px 0px 50px 10px;
+}
 
-  .upvote a:hover {
-    color: #009F1F;
-  }
+.votes {
+  margin-left: 50px;
+  margin-bottom:-60px;
 
-  .downvote {
-    margin-top: 5px;
-    padding-top: -5px;
-  }
+}
 
-  .downvote a:hover {
-    color: #E90017;
-  }
+.votes a {
+  color: #3A414A;
+}
 
-  .votes a:hover {
-    text-decoration: none;
-  }
+.upvote {
+  margin-bottom: -30px;
+}
 
-  .answer_vote {
-    margin-top: -10px;
-  }
+.upvote a:hover {
+  color: #009F1F;
+}
 
-  /*Login/Signup CSS*/
-  .form_position {
-    margin-left: 50px;
-  }
+.downvote {
+  margin-top: 5px;
+  padding-top: -5px;
+}
+
+.downvote a:hover {
+  color: #E90017;
+}
+
+.votes a:hover {
+  text-decoration: none;
+}
+
+.answer_vote {
+  margin-top: -10px;
+}
+
+/*Login/Signup CSS*/
+.form_position {
+  margin-left: 50px;
+}
 
 
 

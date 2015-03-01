@@ -1,9 +1,18 @@
 <div class="container">
   <div class="index_body">
     <div class="row">
-      <center>
-        <h1 class="question_header">Most recent questions</h1>
-      </center>
+      <div class="col-md-12">
+        <center>
+          <h1 class="question_header">Most recent questions</h1>
+        </center>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <form action="/questions/new">
+            <input type="submit" value="Ask Question" class="btn-info btn ask_question_button">
+        </form>
+      </div>
     </div>
     <% @questions.order(created_at: :desc).each do |question| %>
       <div class="list-group-item">

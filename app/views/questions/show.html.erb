@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="q_and_answer">
+  <div class="question_show_stylz">
     <div class="row">
       <div class="col-md-10">
       <h1><%=@question.title%></h1>
-        <hr width=121%>
+        <hr width="121%">
         <p class="question_content"><%=@question.content%></p>
         <div class="col-md-2">
           <div class="votes">
@@ -23,6 +23,8 @@
             <p><%= @question.votes.count %></p><p>votes</p>
           </span>
         </div>
+        <hr width="121%">
+        <p class="question_body_display"><%=@question.content%></p>
         <br>
       </div>
     </div>
