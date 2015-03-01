@@ -18,13 +18,13 @@ end
 users = User.all
 
 20.times do
-Question.create!(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user: users.sample)
+Question.create!(title: Faker::Hacker.say_something_smart.gsub(/[!.]$/, '?'), content: Faker::Lorem.paragraph, user: users.sample, created_at: rand(1.year).ago, updated_at: rand(1.year).ago)
 end
 
 questions = Question.all
 
 20.times do
-Answer.create!(content: Faker::Lorem.paragraph, user: users.sample, question: questions.sample)
+Answer.create!(content: Faker::Hacker.say_something_smart * 4, user: users.sample, question: questions.sample)
 end
 
 answers = Answer.all
