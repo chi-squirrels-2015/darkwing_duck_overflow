@@ -1,54 +1,69 @@
 <div class="container">
-  <div class="q_and_answer">
+  <div class="question_show_stylz">
     <div class="row">
       <div class="col-md-10">
-      <h1><%=@question.title%></h1>
-        <hr width=121%>
-        <p class="question_content"><%=@question.content%></p>
-        <div class="col-md-2">
-          <div class="votes">
-            <% if current_user %>
-            <%= link_to questions_upvote_path(@question), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
-              <% end %>
-            <%= link_to questions_downvote_path(@question), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
-              <% end %>
-            <% else %>
-              <%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
-                <% end %>
-              <%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
-                <% end %>
-            <% end %>
-          </div>
-          <span class="question_vote badge">
-            <p><%= @question.votes.count %></p><p>votes</p>
-          </span>
-        </div>
+        <h1><%=@question.title%></h1><br>
+        <hr width="121%"><br>
+        <p class="the_question"><%=@question.content%></p>
         <br>
       </div>
-    </div>
-    <% @question.answers.each do |answer| %>
-    <div class="list-group-item">
-      <div class="row">
-        <div class="answer_table col-md-10">
-          <p><strong>Answer: </strong><%= answer.content %></p>
+      <div class="col-md-2">
+        <div class="votes">
+          <% if current_user %>
+          <p class="upvote question_upvote"><%= link_to questions_upvote_path(@question), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
+            <% end %></p>
+          <p class="downvote question_downvote"><%= link_to questions_downvote_path(@question), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %></p>
+          <% else %>
+          <p class="upvote"><%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
+            <% end %></p>
+          <p class="downvote"><%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %></p>
+          <% end %>
         </div>
-        <div class="col-md-2">
-          <div class="votes">
-            <% if current_user %>
+        <span class="badge question_badge">
+        <p><%= @question.votes.count %></p><p>votes</p>
+        </span>
+      </div>
+      <br>
+    </div>
+  </div>
+  <% @question.answers.each do |answer| %>
+  <div class="list-group-item">
+    <div class="row">
+      <div class="answer_table col-md-9">
+        <p>
+          <strong>Answer: </strong><%= answer.content %>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div class="votes">
+          <% if current_user %>
+          <p class="upvote">
             <%= link_to answers_upvote_path(answer), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
-              <% end %>
-            <%= link_to answers_downvote_path(answer), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
-              <% end %>
-            <% else %>
-              <%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
-                <% end %>
-              <%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
-                <% end %>
             <% end %>
+          </p>
+          <p class="downvote">
+            <%= link_to answers_downvote_path(answer), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %>
+          </p>
+          <% else %>
+          <p class="upvote"><%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
+            <% end %>
+          </p>
+          <p class="downvote"><%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %>
+          </p>
+          <% end %>
           </div>
-          <span class="answer_vote badge">
+          <span class="badge">
+            <p>Best</p>
+            <p>Answer</p>
+          </span>
+          <span class="badge">
             <p><%= answer.votes.count %></p><p>votes</p>
           </span>
+
         </div>
       </div>
     </div>

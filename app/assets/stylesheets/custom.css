@@ -32,137 +32,181 @@ nav a:hover {
   color: #91559B !important;
 }
 
-/*nav ul li {
-  display: inline-block;
-  }*/
+nav ul li a {
+  color:white !important;
+  padding-right:20px;
+}
 
-  nav ul li a {
-    color:white !important;
-    padding-right:20px;
-  }
+nav ul li a:hover {
+  color: #91559B ;
+}
 
-  nav ul li a:hover {
-    color: #91559B ;
-  }
+.navbar-custom {
+  font-weight: 400;
+  font-size: 18px;
+}
 
-  .navbar-custom {
-    font-weight: 400;
-    font-size: 18px;
-  }
+.navbar-default {
+  background-color: #3A414A;
+}
 
-  .navbar-default {
-    background-color: #3A414A;
-  }
+.brand {
+  font-size: 150%;
+}
 
-  .brand {
-    font-size: 150%;
-  }
+.darkwing_logo {
+  width:15%;
+  padding: 0px 5px 10px 0px !important;
+  margin-left: 30px !important;
+}
 
-  .darkwing_logo {
-    width:15%;
-    padding: 0px 5px 10px 0px !important;
-    margin-left: 30px !important;
-  }
+.login_shit {
+  margin-top: 45px !important;
+  padding: 0px 30px 0px 0px !important;
+}
 
-  .login_shit {
-    margin-top: 45px !important;
-    padding: 0px 30px 0px 0px !important;
-  }
+/*Question CSS*/
+.question_show_stylz h1 {
+  margin-left: 10px !important;
+}
 
-  /*Question CSS*/
-  .question_header {
-    padding-bottom:20px;
-  }
+.the_question {
+  margin-left: 15px !important;
+  font-size: 18px;
+}
 
-  .q_and_answer h1 {
-    margin-left: 10px !important;
-  }
+.question_header {
+  padding-bottom:20px;
+}
 
-  .question_links {
-    margin-top: 20px;
-    font-size: 120% !important;
-  }
+.question_body_display {
+  margin-left: 10px;
+  font-size: 120%;
+}
 
-  .question_links a {
-    color: #9398A5 !important;
-  }
+.question_links {
+  margin-top: 20px;
+  font-size: 120% !important;
+}
 
-  .question_table {
-    margin-top: 20px;
-  }
+.question_table {
+  margin-top: 20px;
+}
 
-  .question_links a:hover{
-    color: #98169B !important;
-    text-decoration: none;
-  }
+.question_links a {
+  color: #9398A5 !important;
+}
 
-  .badge {
-    float: right !important;
-    border-radius: 0 !important;
-    background-color: #9B7EAA !important;
-    font-size: 110% !important;
-    font-weight: 300 !important;
-    margin-right: 10px;
-    width: 32%;
-    padding-top:10px !important;
-  }
+.question_links a:hover{
+  color: #98169B !important;
+  text-decoration: none;
+}
 
-  .label {
-    background-color: #FF804C !important;
-    border-radius: 0 !important;
-    font-size: 110% !important;font-weight: 300 !important;
-    margin-top: 20px !important;
-  }
+.badge {
+  float: right !important;
+  border-radius: 0 !important;
+  background-color: #9B7EAA !important;
+  font-size: 110% !important;
+  font-weight: 300 !important;
+  margin: -15px 10px 0px 0px;
+  width: 5em !important;
+  padding-top:10px !important;
+}
 
-  .question_content {
-    margin-left: 10px;
-    font-size: 120%;
-  }
-  /*Answer CSS*/
+.recent_question_badges {
+  margin-top: 18px !important
+}
 
-  .answer_form {
-    margin: 50px 0px 50px 10px;
-  }
+.question_badge {
+  margin-right: 113px !important;
+}
 
-  .votes {
-    margin-left: 50px;
-    margin-bottom:-60px;
+.question_upvote {
+  margin-top: 30px !important;
+  margin-left: -105px !important;
+}
 
-  }
+.question_downvote {
+  margin-left: -105px !important;
+}
 
-  .votes a {
-    color: #3A414A;
-  }
+.label {
+  background-color: #FF804C !important;
+  border-radius: 0 !important;
+  font-size: 110% !important;font-weight: 300 !important;
+  margin-top: 20px !important;
+}
 
-  .upvote {
-    margin-bottom: -30px;
-  }
+/*New question form*/
+.question_form_position {
+  margin: 20px 0px 20px 20px;
+}
 
-  .upvote a:hover {
-    color: #009F1F;
-  }
+.question_form_title_position {
+  margin-right: 5px;
+}
 
-  .downvote {
-    margin-top: 5px;
-    padding-top: -5px;
-  }
+.form-inline .form-group input {
+  width:700px;
+}
 
-  .downvote a:hover {
-    color: #E90017;
-  }
+.question_form_body_position {
+  margin: 10px 0px 0px 35px;
+  width: 700px !important;
+  height: 300px !important;
+}
 
-  .votes a:hover {
-    text-decoration: none;
-  }
+.create_question_button {
+  margin: 10px 0px 0px 35px;
+  display: block !important;
+  width: 150px !important;
+}
 
-  .answer_vote {
-    margin-top: -10px;
-  }
+.ask_question_button {
+  margin: 0px 50px 15px 0px !important;
+  float: right;
+}
 
-  /*Login/Signup CSS*/
-  .form_position {
-    margin-left: 50px;
-  }
+/*Answer CSS*/
+.answer_form {
+  margin: 50px 0px 50px 10px;
+}
+
+.votes {
+  margin: 0px 0px -60px 50px;
+}
+
+.votes a {
+  color: #3A414A;
+}
+
+.upvote {
+  margin-bottom: -20px;
+}
+
+.upvote a:hover {
+  color: #009F1F;
+}
+
+.downvote {
+}
+
+.downvote a:hover {
+  color: #E90017;
+}
+
+.votes a:hover {
+  text-decoration: none;
+}
+
+.answer_vote {
+  margin-top: -10px;
+}
+
+/*Login/Signup CSS*/
+.form_position {
+  margin-left: 50px;
+}
 
 
 

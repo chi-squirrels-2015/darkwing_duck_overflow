@@ -1,5 +1,11 @@
-<%= simple_form_for @question do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
-<% end %>
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <div class="question_form_position">
+      <div class="row">
+        <div class="col-md-10">
+          <%= render :partial => 'question_form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
