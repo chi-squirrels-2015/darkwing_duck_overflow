@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Devise gem for user authentication and sessioning
 gem 'devise'
 
+gem 'faker', '~> 1.4.0'
 
 group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -37,7 +38,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
-  gem 'faker', '~> 1.4.0'
   gem 'capybara'
 end
 
