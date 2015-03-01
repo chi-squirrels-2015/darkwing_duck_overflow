@@ -7,16 +7,18 @@ html {
   position: relative;
 }
 
+body {
+  background-color: #ffffff;
+  margin-bottom: 60px;
+  padding-top: 100px;
+  font-size: 18px;
+}
+
 div {
   font-family: 'Quicksand', sans-serif !important;
 }
 
-body {
-  background-color: #ffffff;
-  margin-bottom: 60px;
-}
-
-
+/*Navbar CSS*/
 nav {
   padding-top: 20px;
 }
@@ -46,17 +48,32 @@ nav ul li a {
 .navbar-default {
   background-color: #3A414A;
 }
+
 .brand {
   font-size: 150%;
 }
 
+/*Question CSS*/
 .question_header {
   padding-bottom:20px;
 }
 
-body {
-  padding-top: 100px;
-  font-size: 18px;
+.question_links {
+  margin-top: 20px;
+  font-size: 120% !important;
+}
+
+.question_links a {
+  color: #9398A5 !important;
+}
+
+.question_table {
+  margin-top: 20px;
+}
+
+.question_links a:hover{
+  color: #98169B !important;
+  text-decoration: none;
 }
 
 .badge {
@@ -77,21 +94,21 @@ body {
   margin-top: 20px !important;
 }
 
-.question_links {
-  margin-top: 20px;
-  font-size: 120% !important;
+.question_content {
+  margin-left: 10px;
+  font-size: 120%;
 }
-.question_links a {
-  color: #9398A5 !important;
-}
-.question_table {
-  margin-top: 20px;
-}
-.question_links a:hover{
-  color: #98169B !important;
-  text-decoration: none;
+/*Answer CSS*/
+
+.answer_form {
+  margin: 50px 0px 50px 10px;
 }
 
+/*Login/Signup CSS*/
 .form_position {
   margin-left: 50px;
 }
+
+
+
+
