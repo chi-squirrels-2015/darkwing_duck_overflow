@@ -1,5 +1,10 @@
+html, body {
+  height: 100%
+}
+
 html {
   font-family: 'Quicksand', sans-serif !important;
+  position: relative;
 }
 
 div {
@@ -8,6 +13,7 @@ div {
 
 body {
   background-color: #ffffff;
+  margin-bottom: 60px;
 }
 
 
@@ -84,4 +90,8 @@ body {
 .question_links a:hover{
   color: #98169B !important;
   text-decoration: none;
+}
+
+.form_position {
+  margin-left: 50px;
 }

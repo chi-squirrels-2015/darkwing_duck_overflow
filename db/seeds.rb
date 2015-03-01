@@ -11,20 +11,20 @@
 
 
 
-20.times do
+100.times do
   User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 end
 
 users = User.all
 
 20.times do
-Question.create!(title: Faker::Hacker.say_something_smart.gsub(/[!.]$/, '?'), content: Faker::Lorem.paragraph, user: users.sample, created_at: rand(1.year).ago, updated_at: rand(1.year).ago)
+Question.create!(title: Faker::Hacker.say_something_smart.gsub(/[!.]$/, '?'), content: Faker::Hacker.say_something_smart + ' ' + Faker::Hacker.say_something_smart + ' ' + Faker::Hacker.say_something_smart, user: users.sample, created_at: rand(1.year).ago, updated_at: rand(1.year).ago)
 end
 
 questions = Question.all
 
-20.times do
-Answer.create!(content: Faker::Hacker.say_something_smart * 4, user: users.sample, question: questions.sample)
+100.times do
+Answer.create!(content: Faker::Hacker.say_something_smart + ' ' + Faker::Hacker.say_something_smart + ' ' + Faker::Hacker.say_something_smart, user: users.sample, question: questions.sample)
 end
 
 answers = Answer.all
@@ -38,9 +38,9 @@ end
 end
 
 20.times do
-  Comment.create!(content: Faker::Lorem.paragraph, commentable: questions.sample, commenter: users.sample)
+  Comment.create!(content: Faker::Hacker.say_something_smart, commentable: questions.sample, commenter: users.sample)
 end
 
 10.times do
-  Comment.create!(content: Faker::Lorem.paragraph, commentable: answers.sample, commenter: users.sample)
+  Comment.create!(content: Faker::Hacker.say_something_smart, commentable: answers.sample, commenter: users.sample)
 end
