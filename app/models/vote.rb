@@ -7,11 +7,4 @@ class Vote < ActiveRecord::Base
   belongs_to :voter, class_name: "User"
   belongs_to :voteable, polymorphic: true
 
-  def up_vote
-     self.increment!
-  end
-
-  def down_vote
-    self.decrement!
-  end
 end

@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   root({to: 'questions#index'})
 
+  put '/questions/:question_id/upvote' => "votes#question_upvote", as: "questions_upvote"
+  put '/questions/:question_id/downvote' => "votes#question_downvote", as: "questions_downvote"
+  put '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answers_upvote"
+  put '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answers_downvote"
+
 
   resources :questions do
     resources :answers, only: [:new, :show, :create, :update, :destroy]
