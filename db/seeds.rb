@@ -36,3 +36,11 @@ end
 10.times do
   Vote.create!(voteable: answers.sample, voter: users.sample)
 end
+
+20.times do
+  Comment.create!(content: Faker::Lorem.paragraph, commentable: questions.sample, commenter: users.sample)
+end
+
+10.times do
+  Comment.create!(content: Faker::Lorem.paragraph, commentable: answers.sample, commenter: users.sample)
+end
