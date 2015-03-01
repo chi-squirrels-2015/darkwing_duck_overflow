@@ -18,35 +18,34 @@ class AnswersController < ApplicationController
   end
 
   def create
-    # if current_user
+    if current_user
     @answer = Answer.create!(answer_params)
     @question = Question.find(params[:question_id])
     redirect_to question_path(@question)
-    # end
+    end
   end
 
   def update
-    # if current_user
-      @question = Question.find(params[:question_id])
       @answer = Answer.find(params[:id])
+      @question = Question.find(params[:question_id])
 
-
+    if current_user = @answer.user
       if @answer.update(answer_params)
         redirect_to question_path(@question)
       else
         render 'edit'
       end
-    # end
+    end
   end
 
   def destroy
-    # if current_user
       @answer = Answer.find(params[:id])
       @question = Question.find(params[:question_id])
+      
+    if current_user = @answer.user
       @answer.destroy
-
-      redirect_to questions_path
-    # end
+      redirect_to questions_path(@question)
+    end
   end
 
 end
