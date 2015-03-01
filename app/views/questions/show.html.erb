@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-10">
       <h1><%=@question.title%></h1>
-        <hr>
+        <hr width=121%>
         <p class="question_content"><%=@question.content%></p>
         <br>
       </div>
@@ -15,7 +15,11 @@
           <p><strong>Answer: </strong><%= answer.content %></p>
         </div>
         <div class="col-md-2">
-          <span class="badge">
+          <div class="votes">
+            <p class="upvote"><a href="#" class="fa fa-sort-asc fa-3x"></a></p>
+            <p class="downvote"><a href="#" class="fa fa-sort-desc fa-3x"></a></p>
+          </div>
+          <span class="answer_vote badge">
             <p><%= answer.votes.count %></p><p>votes</p>
           </span>
         </div>
