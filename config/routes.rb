@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   put '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answers_downvote"
 
   get '/questions/:question_id/comments/new' => 'comments#new', as: 'new_question_comment'
-  post '/questions/:question_id/comments/:comment_id' => "comments#question", as: "create_question_comment"
+  post '/questions/:question_id/comments/:id' => "comments#question", as: "create_question_comment"
 
   get '/questions/:question_id/answers/:answer_id/comments/new' => 'comments#new', as: 'new_answer_comment'
-  post '/questions/:question_id/answers/:answer_id/comments/:comment_id' => "comments#answer", as: "create_answer_comment"
+  post '/questions/:question_id/answers/:answer_id/comments/:id' => "comments#answer", as: "create_answer_comment"
 
 
 

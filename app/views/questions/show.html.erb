@@ -105,6 +105,7 @@
       </div>
     </div>
 
+
     <div class="answer_form">
       <div class="row">
         <div class="col-md-8">
@@ -112,7 +113,17 @@
         </div>
       </div>
     </div>
+
+    <div class="comment_form">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/comments/new_question_comment_form', locals: {question: @question, comment: @question.comments} %>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </div>
-
 
