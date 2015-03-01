@@ -23,7 +23,7 @@
           <div class="question_links col-md-6">
             <%= link_to question.title, question_path(question) %></a>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 recent_question_badges">
             <span class="badge"><p><%= question.answers.count %></p><p>answers</p></span>
             <span class="badge"><p><%= question.votes.count %></p><p>votes</p></span>
           </div>

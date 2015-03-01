@@ -70,6 +70,11 @@ nav ul li a:hover {
   margin-left: 10px !important;
 }
 
+.the_question {
+  margin-left: 15px !important;
+  font-size: 18px;
+}
+
 .question_header {
   padding-bottom:20px;
 }
@@ -103,9 +108,26 @@ nav ul li a:hover {
   background-color: #9B7EAA !important;
   font-size: 110% !important;
   font-weight: 300 !important;
-  margin-right: 10px;
-  width: 32%;
+  margin: -15px 10px 0px 0px;
+  width: 5em !important;
   padding-top:10px !important;
+}
+
+.recent_question_badges {
+  margin-top: 18px !important
+}
+
+.question_badge {
+  margin-right: 113px !important;
+}
+
+.question_upvote {
+  margin-top: 30px !important;
+  margin-left: -105px !important;
+}
+
+.question_downvote {
+  margin-left: -105px !important;
 }
 
 .label {
@@ -129,32 +151,29 @@ nav ul li a:hover {
 }
 
 .question_form_body_position {
-  margin-top: 10px;
-  margin-left: 35px;
+  margin: 10px 0px 0px 35px;
   width: 700px !important;
   height: 300px !important;
 }
 
 .create_question_button {
-  margin-left: 35px;
-  margin-top:10px;
+  margin: 10px 0px 0px 35px;
   display: block !important;
   width: 150px !important;
 }
+
 .ask_question_button {
-  margin-bottom: 15px !important;
+  margin: 0px 50px 15px 0px !important;
   float: right;
 }
-/*Answer CSS*/
 
+/*Answer CSS*/
 .answer_form {
   margin: 50px 0px 50px 10px;
 }
 
 .votes {
-  margin-left: 50px;
-  margin-bottom:-60px;
-
+  margin: 0px 0px -60px 50px;
 }
 
 .votes a {
@@ -162,7 +181,7 @@ nav ul li a:hover {
 }
 
 .upvote {
-  margin-bottom: -30px;
+  margin-bottom: -20px;
 }
 
 .upvote a:hover {
@@ -170,8 +189,6 @@ nav ul li a:hover {
 }
 
 .downvote {
-  margin-top: 5px;
-  padding-top: -5px;
 }
 
 .downvote a:hover {
