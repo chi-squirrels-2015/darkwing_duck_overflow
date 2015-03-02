@@ -19,8 +19,11 @@ class AnswersController < ApplicationController
 
   def create
     if current_user
-    @answer = Answer.create!(answer_params)
+    @answer = Answer.new(answer_params)
+    @answer.user = current_user
     @question = Question.find(params[:question_id])
+    @answer.question = @question
+    @answer.save
     redirect_to question_path(@question)
     end
   end
