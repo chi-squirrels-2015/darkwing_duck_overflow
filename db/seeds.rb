@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-300.times do
+100.times do
   User.create!(username: [(Faker::Internet.user_name + Faker::Number.number(5)), (Faker::Internet.user_name + Faker::Number.number(4)), (Faker::Hacker.noun + Faker::Number.number(4))].sample,
                email: [Faker::Internet.free_email, Faker::Internet.email, Faker::Internet.safe_email].sample,
                password: 'password')
@@ -41,7 +41,7 @@ answers = Answer.all
                voter: users.sample)
 end
 
-115.times do
+50.times do
   Vote.create!(voteable: answers.sample,
                voter: users.sample)
 end

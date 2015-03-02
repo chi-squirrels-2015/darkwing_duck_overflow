@@ -1,8 +1,8 @@
 <div class="container">
   <div class="question_show_stylz">
     <div class="row">
-    <div class="col-md-10">
-        <h1 class="the_question_title"><%=@question.title%></h1><br>
+      <div class="col-md-10">
+        <h1><%=@question.title%></h1><br>
         <hr width="121%"><br>
         <p class="the_question"><%=@question.content%></p>
         <br>
@@ -12,68 +12,88 @@
           <% if current_user %>
           <p class="upvote question_upvote"><%= link_to questions_upvote_path(@question), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
             <% end %></p>
-            <p class="downvote question_downvote"><%= link_to questions_downvote_path(@question), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
-              <% end %></p>
-              <% else %>
-              <p class="upvote"><%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
-                <% end %></p>
-                <p class="downvote"><%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
-                  <% end %></p>
-                  <% end %>
-                </div>
-                <span class="badge question_badge">
-                  <p><%= @question.votes.count %></p><p>votes</p>
-                </span>
-              </div>
-              <br>
-            </div>
-          </div>
-          <% @question.answers.each do |answer| %>
-          <div class="list-group-item">
-            <div class="row">
-              <div class="answer_table col-md-9">
-                <p>
-                  <strong>Answer: </strong><%= answer.content %>
-                </p>
-              </div>
-              <div class="col-md-3">
-                <div class="votes">
-                  <% if current_user %>
-                  <p class="upvote">
-                    <%= link_to answers_upvote_path(answer), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
-                    <% end %>
-                  </p>
-                  <p class="downvote">
-                    <%= link_to answers_downvote_path(answer), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
-                    <% end %>
-                  </p>
-                  <% else %>
-                  <p class="upvote"><%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
-                    <% end %>
-                  </p>
-                  <p class="downvote"><%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
-                    <% end %>
-                  </p>
-                  <% end %>
-                </div>
-                <span class="badge">
-                  <p>Best</p>
-                  <p>Answer</p>
-                </span>
-                <span class="badge">
-                  <p><%= answer.votes.count %></p><p>votes</p>
-                </span>
-              </div>
-            </div>
-          </div>
+          <p class="downvote question_downvote"><%= link_to questions_downvote_path(@question), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %></p>
+          <% else %>
+          <p class="upvote"><%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
+            <% end %></p>
+          <p class="downvote"><%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %></p>
           <% end %>
-          <div class="answer_form">
-            <div class="row">
-              <div class="col-md-8">
-                <%= render :partial => '/answers/answer_form' %>
-              </div>
-            </div>
-          </div>
+        </div>
+        <span class="badge question_badge">
+        <p><%= @question.votes.count %></p><p>votes</p>
+        </span>
+      </div>
+      <br>
+    </div>
+    <div class="comment_form">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/comments/new_question_comment_form', locals: {comment: @question.comments} %>
         </div>
       </div>
+    </div>
+  </div>
+  <% @question.answers.each do |answer| %>
+  <div class="list-group-item">
+    <div class="row">
+      <div class="answer_table col-md-9">
+        <p>
+          <strong>Answer: </strong><%= answer.content %>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div class="votes">
+          <% if current_user %>
+          <p class="upvote">
+            <%= link_to answers_upvote_path(answer), method: :put, :class => "fa fa-sort-asc fa-3x" do %>
+            <% end %>
+          </p>
+          <p class="downvote">
+            <%= link_to answers_downvote_path(answer), method: :put, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %>
+          </p>
+          <% else %>
+          <p class="upvote"><%= link_to new_user_session_path, :class => "fa fa-sort-asc fa-3x" do %>
+            <% end %>
+          </p>
+          <p class="downvote"><%= link_to new_user_session_path, :class => "fa fa-sort-desc fa-3x" do %>
+            <% end %>
+          </p>
+          <% end %>
+          </div>
+          <span class="badge">
+            <p>Best</p>
+            <p>Answer</p>
+          </span>
+          <span class="badge">
+            <p><%= answer.votes.count %></p><p>votes</p>
+          </span>
+
+          <%= link_to "⇣", "#", class: "btn-xs btn-default" %>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="comment_form">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/comments/new_answer_comment_form', locals: {comment: answer.comments} %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="answer_form">
+      <div class="row">
+        <div class="col-md-8">
+          <%= render :partial => '/answers/answer_form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
