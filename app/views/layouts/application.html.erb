@@ -17,14 +17,14 @@
     <div class="container-fluid">
 
       <div class="navbar-header brand">
-        <%= link_to image_tag("dw.png", :class => 'darkwing_logo'), questions_path %>
-        <%= link_to "Darkwing Overflow", questions_path %>
+        <%= link_to image_tag("dw.png", :class => 'darkwing_logo'), root_path %>
+        <%= link_to "Darkwing Overflow", root_path %>
       </div>
 
       <div class="login_shit navbar-right navbar-text">
         <ul class="navbar-nav list-inline">
           <% if current_user %>
-            <li><%= link_to "Profile", edit_user_registration_path %></li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
           <% else %>
             <li><%= link_to "Signup", new_user_registration_path %></li>

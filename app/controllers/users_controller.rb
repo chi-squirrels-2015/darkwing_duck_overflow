@@ -4,10 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      current_user
-    else
-      redirect_to new_user_session_path
-    end
+    @user = User.find(params[:id])
   end
 end
