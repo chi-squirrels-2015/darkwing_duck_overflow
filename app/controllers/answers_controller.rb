@@ -19,9 +19,15 @@ class AnswersController < ApplicationController
 
   def create
     if current_user
-    @answer = Answer.create!(answer_params)
+    @answer = Answer.new(answer_params)
     @question = Question.find(params[:question_id])
-    redirect_to question_path(@question)
+      if @answer.save
+        redirect_to question_path(@question)
+      else
+        render new
+      end
+    else
+      redirect_to questions_path
     end
   end
 
@@ -41,7 +47,7 @@ class AnswersController < ApplicationController
   def destroy
       @answer = Answer.find(params[:id])
       @question = Question.find(params[:question_id])
-      
+
     if current_user = @answer.user
       @answer.destroy
       redirect_to questions_path(@question)

@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     if current_user
       @question = Question.new(question_params)
       if @question.save
-        redirect_to questions_path(@question)
+        redirect_to question_path(@question)
       else
         render new
       end
@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:title, :content, :user_id)
+    params.require(:question).permit(:title, :content)
   end
 
   def new
