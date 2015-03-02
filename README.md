@@ -16,7 +16,7 @@ PostgreSQL.
 ### Getting Started
 
 DDO is built on Rails 4 with Ruby 2.0.0p353, using the base gem
-dependencies as well as the additional additional gems below:
+dependencies as well as the additional gems below:
 
 ##### Production:
 * pg
