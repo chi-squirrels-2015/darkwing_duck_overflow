@@ -2,28 +2,30 @@
 <div class="row">
   <div class="col-md-offset-3 col-md-6 col-md-offset-3">
     <div class="thumbnail">
-      <img src=<%= https://slack-imgs.com/?url=https%3A%2F%2Flh3.googleusercontent.com%2F-dPtFI2WgrAQ%2FAAAAAAAAAAI%2FAAAAAAAAABk%2FekCIT9MN54Q%2Fphoto.jpg %> class="img-thumbnail" width="50" height="50">
+      <%= link_to image_tag("dw.png", :class => 'darkwing_logo'), questions_path %>
       <div class="caption">
-        <h3><%=@user.username%></h3>
+        <h3><%= current_user.username %></h3>
       </div>
 
     </div>
 
   </div>
-</div
+</div>
 
 
 <div class="row">
   <div class="col-md-6">
     <h3>Questions</h3>
-    <% user.questions.each do |question| %>
+    <% current_user.questions.each do |question| %>
       <%= link_to question.title, question_path(question) %><br />
+      <% end %>
       <br>
   </div>
   <div class="col-md-6">
     <h3>Answered Questions</h3>
-    <% user.answered_questions.each do |answered_question| %>
+    <% current_user.answered_questions.each do |answered_question| %>
       <%= link_to answered_question.title, question_path(question) %><br />
-      <br>
+    <% end %>
+    <br>
   </div>
 </div>

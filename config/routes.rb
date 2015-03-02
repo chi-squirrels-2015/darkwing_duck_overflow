@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions" }
+  resources :users, only: [:index, :show]
 
   root({to: 'questions#index'})
 
@@ -8,13 +9,12 @@ Rails.application.routes.draw do
   put '/answers/:answer_id/upvote' => "votes#answer_upvote", as: "answers_upvote"
   put '/answers/:answer_id/downvote' => "votes#answer_downvote", as: "answers_downvote"
 
+
   get '/questions/:question_id/comments/new' => 'comments#new', as: 'new_question_comment'
   post '/questions/:question_id/comments/:id' => "comments#question", as: "create_question_comment"
 
   get '/questions/:question_id/answers/:answer_id/comments/new' => 'comments#new', as: 'new_answer_comment'
   post '/questions/:question_id/answers/:answer_id/comments/:id' => "comments#answer", as: "create_answer_comment"
-
-
 
   resources :questions do
     resources :answers, only: [:new, :show, :create, :update, :destroy]
