@@ -59,4 +59,5 @@ class QuestionsController < ApplicationController
       redirect_to questions_path(@question)
     end
   end
+  
 end
